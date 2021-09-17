@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCF9F5"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".ui.home.OrderStatusActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:background="@drawable/ic_down_curve"
+        android:orientation="vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:padding="7dp"
+            android:text="@string/order_status"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_28" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:fontFamily="@font/roboto"
+            android:padding="7dp"
+            android:text="View your order #212423 Updates below"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_14" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="14dp"
+        android:background="#FCF9F5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_layout" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_checked_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_divider" />
+
+
+    <TextView
+        android:id="@+id/text_orderPlaced"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/order_placed"
+        android:textAllCaps="true"
+        android:textColor="#272833"
+        android:textSize="@dimen/text_20"
+        app:layout_constraintStart_toStartOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view_divider" />
+
+
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="1 min ago"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#80272833"
+        android:gravity="end"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_orderPlaced"
+        app:layout_constraintTop_toBottomOf="@+id/view_divider" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
+        android:fontFamily="@font/roboto"
+        android:text="Your order #212423 was placed on 23th November 2019."
+        android:textColor="#99272833"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toEndOf="@id/view_divider"
+        app:layout_constraintStart_toStartOf="@+id/text_orderPlaced"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <View
+        android:id="@+id/view_order_confirmed"
+        android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+    <View
+        android:id="@+id/view_processing"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_unchecked_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_order_confirmed" />
+
+
+    <TextView
+        android:id="@+id/text_orderProcessing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/processing"
+        android:textAllCaps="true"
+        android:textColor="#272833"
+        android:textSize="@dimen/text_20"
+        app:layout_constraintEnd_toEndOf="@id/text_orderPlaced"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/text_orderPlaced"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView_processing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/your_order_still_needs_to_be_processed_by_our_store_before_sending_it_to_you"
+        android:textColor="#99272833"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toEndOf="@id/view_divider"
+        app:layout_constraintStart_toStartOf="@+id/text_orderProcessing"
+        app:layout_constraintTop_toBottomOf="@+id/view_processing"  />
+
+
+    <View
+        android:id="@+id/view_order_pending"
+        android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_processing" />
+
+    <View
+        android:id="@+id/view_pickedUp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_unchecked_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_order_pending" />
+
+
+    <TextView
+        android:id="@+id/text_orderPickedUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/picked_up_order"
+        android:textAllCaps="true"
+        android:textColor="#272833"
+        android:textSize="@dimen/text_20"
+        app:layout_constraintEnd_toEndOf="@id/textView_processing"
+        app:layout_constraintStart_toStartOf="@id/textView_processing"
+        app:layout_constraintTop_toBottomOf="@+id/textView_processing" />
+
+
+    <TextView
+        android:id="@+id/textView_pickedUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/your_order_has_been_picked_up_by_one_of_our_couriers_and_its_on_your_way"
+        android:textColor="#99272833"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toEndOf="@id/view_divider"
+        app:layout_constraintStart_toStartOf="@+id/text_orderPickedUp"
+        app:layout_constraintTop_toBottomOf="@+id/view_pickedUp"  />
+
+    <View
+        android:id="@+id/view_order_pickedUp"
+        android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_pickedUp" />
+
+    <View
+        android:id="@+id/view_delivery"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_unchecked_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_order_pickedUp" />
+
+
+    <TextView
+        android:id="@+id/text_delivery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/delivering"
+        android:textAllCaps="true"
+        android:textColor="#272833"
+        android:textSize="@dimen/text_20"
+        app:layout_constraintEnd_toEndOf="@id/textView_pickedUp"
+        app:layout_constraintStart_toStartOf="@id/textView_pickedUp"
+        app:layout_constraintTop_toBottomOf="@+id/textView_pickedUp" />
+
+    <TextView
+        android:id="@+id/textView_delivery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/the_package_is_on_your_way_make_sure_to_be_at_the_location_to_meet_the_courier"
+        android:textColor="#99272833"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toEndOf="@id/view_divider"
+        app:layout_constraintStart_toStartOf="@+id/text_delivery"
+        app:layout_constraintTop_toBottomOf="@+id/text_delivery"  />
+
+
+    <View
+        android:id="@+id/view_order_delivering"
+        android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_delivery" />
+
+    <View
+        android:id="@+id/view_delivered"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_unchecked_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_order_delivering" />
+
+    <TextView
+        android:id="@+id/text_delivered"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/delivered"
+        android:textAllCaps="true"
+        android:textColor="#272833"
+        android:textSize="@dimen/text_20"
+        app:layout_constraintEnd_toEndOf="@id/textView_delivery"
+        app:layout_constraintStart_toStartOf="@id/textView_delivery"
+        app:layout_constraintTop_toBottomOf="@+id/textView_delivery" />
+
+    <TextView
+        android:id="@+id/textView_delivered"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/it_seems_like_the_package_has_arrived_to_you_hope_you_are_happy_with_it"
+        android:textColor="#99272833"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toEndOf="@id/view_divider"
+        app:layout_constraintStart_toStartOf="@+id/text_delivered"
+        app:layout_constraintTop_toBottomOf="@+id/text_delivered"  />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
